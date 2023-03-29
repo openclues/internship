@@ -7,7 +7,7 @@ from users.views import PractiseApiView, CreatePractiseApiView, ListPractiseApiV
 
 router = DefaultRouter()
 # router.register(r'Practise', )
-
+#something.com
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('djoser.urls')),
@@ -15,7 +15,7 @@ urlpatterns = [
 
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
-    path('api/v1/documentation', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+        path('api/v1/documentation', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/v1/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 
     path('api', include(router.urls)),

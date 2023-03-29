@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f(2@#j4t%7q5u+!@k&4w(63^d^8g8*)q$!+*tm=$v0h#7z4td6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.46', '127.0.0.1']
 
 # Application definition
 
@@ -42,6 +42,14 @@ INSTALLED_APPS = [
     'users',
     'rest_framework.authtoken',
 ]
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user': "users.serializers.UserAccountSerializer",
+        'current_user': "users.serializers.UserAccountSerializer",
+        'token': "users.serializers.AuthTokenSerizlier"
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
